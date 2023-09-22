@@ -32,4 +32,19 @@ public class Cuenta {
     public void setNumeroDeCuenta(long numeroDeCuenta) {
         this.numeroDeCuenta = numeroDeCuenta;
     }
+
+    public void setIngreso(double ingresoSaldo) {
+        if (ingresoSaldo > 0) {
+            this.saldoDeCuenta += ingresoSaldo;
+        }
+    }
+    public double getMonto() {
+        return this.saldoDeCuenta;
+    }
+    public void setRetiro(double retiroSaldo) {
+        if (retiroSaldo > 0 && retiroSaldo <= this.saldoDeCuenta) {
+            this.saldoDeCuenta -= retiroSaldo;
+        }
+    }
 }
+
